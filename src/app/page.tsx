@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { lusitana } from "@/app/ui/fonts";
 import Logo from "@/app/ui/logo";
+import Image from "next/image";
+import desktop from "@/public/hero-desktop.png";
+import mobile from "@/public/hero-mobile.png";
 
 export default function Page() {
   return (
@@ -26,7 +29,22 @@ export default function Page() {
             <span>Log in</span>
           </Link>
         </div>
-        <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12"></div>
+        <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
+          <Image
+            src={desktop}
+            width={1000}
+            height={760}
+            className="hidden md:block"
+            alt="versão em desktop do dashboard"
+          />
+          <Image
+            src={mobile}
+            width={560}
+            height={620}
+            className="block md:hidden"
+            alt="versão mobile do dashboard"
+          />
+        </div>
       </div>
     </main>
   );
